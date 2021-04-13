@@ -1,15 +1,13 @@
 //  快速幂
 
 #include <iostream>
+#include <climits>
 
 class Solution
 {
 public:
-    double myPow(double x, int n)
+    static double myPow(double x, int n)
     {
-        qsort(nullptr, 10, 10, [](int a, int b)->int{
-             return a <= b; 
-             });
         if (x == 1.0 || x == -1.0 && (n == 0 || n == INT_MIN))
             return 1.0;
         if (x == 0.0 || n == INT_MIN)
@@ -44,3 +42,7 @@ public:
         return re;
     }
 };
+int main()
+{
+    std::cout << Solution::myPow(0.2, 10) << "\n";
+}
